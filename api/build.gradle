@@ -17,6 +17,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation group: 'org.mapstruct', name: 'mapstruct', version: '1.4.2.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
 }
 
 tasks.named('test') {
