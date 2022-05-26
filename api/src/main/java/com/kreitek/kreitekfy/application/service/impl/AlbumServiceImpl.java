@@ -3,6 +3,7 @@ package com.kreitek.kreitekfy.application.service.impl;
 import com.kreitek.kreitekfy.application.dto.AlbumDTO;
 import com.kreitek.kreitekfy.application.mapper.AlbumMapper;
 import com.kreitek.kreitekfy.application.service.AlbumService;
+import com.kreitek.kreitekfy.domain.entity.Album;
 import com.kreitek.kreitekfy.domain.persistence.AlbumPersistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,21 +25,23 @@ public class AlbumServiceImpl implements AlbumService {
 
     @Override
     public List<AlbumDTO> getAllAlbums() {
-        return null;
+        List<Album> albums = this.persistence.getAllAlbums();
+        return this.mapper.toDto(albums);
     }
 
     @Override
     public Optional<AlbumDTO> getAlbumById(Long albumId) {
-        return Optional.empty();
+        return this.persistence.getAlbumById(albumId).map(mapper::toDto);
     }
 
     @Override
     public AlbumDTO saveAlbum(AlbumDTO albumDto) {
-        return null;
+        Album album = this.persistence.saveAlbum(this.mapper.toEntity(albumDto));
+        return this.mapper.toDto(album);
     }
 
     @Override
     public void deleteAlbum(Long albumId) {
-
+        
     }
 }
