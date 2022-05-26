@@ -1,11 +1,13 @@
 package com.kreitek.kreitekfy.application.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
-import java.util.List;
 
 public class ArtistDTO {
     private Long id;
     private String name;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date birthdate;
     private byte[] avatar;
 

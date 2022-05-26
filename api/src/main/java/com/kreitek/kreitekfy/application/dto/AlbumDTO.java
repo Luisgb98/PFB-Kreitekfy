@@ -1,10 +1,13 @@
 package com.kreitek.kreitekfy.application.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.util.Date;
 
 public class AlbumDTO {
     private Long id;
     private String album_name;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date release_date;
     private byte[] image;
 
