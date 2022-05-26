@@ -7,13 +7,6 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface AlbumMapper extends EntityMapper<AlbumDTO, Album>{
-    @Override
-    @Mapping(source = "songId", target = "song")
-    Album toEntity(AlbumDTO dto);
-
-    @Override
-    @Mapping(source = "song.id", target = "songId")
-    AlbumDTO toDto(Album entity);
 
     default Album fromId(Long id) {
         if (id == null) return null;

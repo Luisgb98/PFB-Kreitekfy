@@ -1,6 +1,7 @@
 package com.kreitek.kreitekfy.application.dto;
 
 import java.util.Date;
+import java.util.List;
 
 public class ArtistDTO {
     private Long id;
