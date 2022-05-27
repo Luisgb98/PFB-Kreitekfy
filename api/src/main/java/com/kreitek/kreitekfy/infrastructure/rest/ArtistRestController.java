@@ -20,12 +20,14 @@ public class ArtistRestController {
         this.artistService = artistService;
     }
 
+    @CrossOrigin
     @GetMapping(value = "/artists", produces = "application/json")
     ResponseEntity<List<ArtistDTO>> getAllArtists() {
         List<ArtistDTO> artistDTOs = this.artistService.getAllArtists();
         return new ResponseEntity<>(artistDTOs, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(value = "/artist/{artistId}", produces = "application/json")
     ResponseEntity<ArtistDTO> getArtistById(@PathVariable Long artistId) {
         Optional<ArtistDTO> artistDTOs = this.artistService.getArtistById(artistId);
@@ -36,12 +38,14 @@ public class ArtistRestController {
         }
     }
 
+    @CrossOrigin
     @PostMapping(value = "/artists", produces = "application/json")
     ResponseEntity<ArtistDTO> saveArtist(@RequestBody ArtistDTO artistDTO) {
         ArtistDTO artistSaved = this.artistService.saveArtist(artistDTO);
         return new ResponseEntity<>(artistSaved, HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @DeleteMapping(value = "/artist/{artistId}")
     ResponseEntity<?> deleteArtist(@PathVariable Long artistId) {
         this.artistService.deleteArtist(artistId);

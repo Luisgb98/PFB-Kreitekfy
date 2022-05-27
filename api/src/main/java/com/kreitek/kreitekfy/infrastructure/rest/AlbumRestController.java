@@ -21,12 +21,14 @@ public class AlbumRestController {
         this.albumService = albumService;
     }
 
+    @CrossOrigin
     @GetMapping(value = "/albums", produces = "application/json")
     ResponseEntity<List<AlbumDTO>> getAllAlbums() {
         List<AlbumDTO> albumDTOs = this.albumService.getAllAlbums();
         return new ResponseEntity<>(albumDTOs, HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping(value = "/album/{albumId}", produces = "application/json")
     ResponseEntity<AlbumDTO> getAlbumById(@PathVariable Long albumId) {
         Optional<AlbumDTO> albumDTOs = this.albumService.getAlbumById(albumId);
@@ -37,12 +39,14 @@ public class AlbumRestController {
         }
     }
 
+    @CrossOrigin
     @PostMapping(value = "/albums", produces = "application/json")
     ResponseEntity<AlbumDTO> saveAlbum(@RequestBody AlbumDTO albumDTO) {
         AlbumDTO albumSaved = this.albumService.saveAlbum(albumDTO);
         return new ResponseEntity<>(albumSaved, HttpStatus.CREATED);
     }
 
+    @CrossOrigin
     @DeleteMapping(value = "/album/{albumId}")
     ResponseEntity<?> deleteAlbum(@PathVariable Long albumId) {
         this.albumService.deleteAlbum(albumId);
