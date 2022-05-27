@@ -39,10 +39,17 @@ public class ArtistRestController {
     }
 
     @CrossOrigin
-    @PostMapping(value = "/artists", produces = "application/json")
+    @PostMapping(value = "/artists", produces = "application/json", consumes = "application/json")
     ResponseEntity<ArtistDTO> saveArtist(@RequestBody ArtistDTO artistDTO) {
         ArtistDTO artistSaved = this.artistService.saveArtist(artistDTO);
         return new ResponseEntity<>(artistSaved, HttpStatus.CREATED);
+    }
+
+    @CrossOrigin
+    @PatchMapping(value = "/artists", produces = "application/json", consumes = "application/json")
+    ResponseEntity<ArtistDTO> updateArtist(@RequestBody ArtistDTO artistDTO) {
+        ArtistDTO artistUpdated = this.artistService.saveArtist(artistDTO);
+        return new ResponseEntity<>(artistUpdated, HttpStatus.OK);
     }
 
     @CrossOrigin

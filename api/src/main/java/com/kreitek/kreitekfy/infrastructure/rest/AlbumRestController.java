@@ -40,10 +40,17 @@ public class AlbumRestController {
     }
 
     @CrossOrigin
-    @PostMapping(value = "/albums", produces = "application/json")
+    @PostMapping(value = "/albums", produces = "application/json", consumes = "application/json")
     ResponseEntity<AlbumDTO> saveAlbum(@RequestBody AlbumDTO albumDTO) {
         AlbumDTO albumSaved = this.albumService.saveAlbum(albumDTO);
         return new ResponseEntity<>(albumSaved, HttpStatus.CREATED);
+    }
+
+    @CrossOrigin
+    @PatchMapping(value = "/albums", produces = "application/json", consumes = "application/json")
+    ResponseEntity<AlbumDTO> updateAlbum(@RequestBody AlbumDTO albumDTO) {
+        AlbumDTO albumUpdated = this.albumService.saveAlbum(albumDTO);
+        return new ResponseEntity<>(albumUpdated, HttpStatus.OK);
     }
 
     @CrossOrigin
