@@ -5,7 +5,7 @@ Realizada por el Grupo 1 del Equipo Verde - Nunsys BootCamp 2022
 Grupo formado por:
 
 - Mario Medina (Kumiihoo)
-- Miguel Ángel Alomino (mapaljim)
+- Miguel Ángel Palomino (mapaljim)
 - Romel Zela (RomelZela)
 - Luis Guisado (Luisgb98)
 
