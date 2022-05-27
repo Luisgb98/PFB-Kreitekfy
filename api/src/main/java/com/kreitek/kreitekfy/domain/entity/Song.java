@@ -14,14 +14,6 @@ public class Song {
     @Column(length = 50, nullable = false)
     private String name;
 
-    /*
-    @Column(length = 50, nullable = false)
-    private String artist_id;
-
-    @Column()
-    private Long album_id;
-     */
-
     @Column
     private Long length;
     @Lob
