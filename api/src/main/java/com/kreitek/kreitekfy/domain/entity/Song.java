@@ -14,14 +14,14 @@ public class Song {
     @Column(length = 50, nullable = false)
     private String name;
 
+    /*
     @Column(length = 50, nullable = false)
     private String artist_id;
 
-    @ManyToOne()
-    @JoinColumn(name = "genre_id", nullable = false)
-    private Genre genre;
     @Column()
     private Long album_id;
+     */
+
     @Column
     private Long length;
     @Lob
@@ -32,6 +32,18 @@ public class Song {
     private double assessment;
     @Column
     private Long playback;
+
+    @ManyToOne()
+    @JoinColumn(name = "genre_id", nullable = false)
+    private Genre genre;
+
+    @ManyToOne()
+    @JoinColumn(name = "artist_id", nullable = false)
+    private Artist artist;
+
+    @ManyToOne()
+    @JoinColumn(name = "album_id", nullable = false)
+    private Album album;
 
     public Song() {
     }
@@ -50,24 +62,6 @@ public class Song {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getArtist_id() {
-        return artist_id;
-    }
-
-    public void setArtist_id(String artist_id) {
-        this.artist_id = artist_id;
-    }
-
-
-
-    public Long getAlbum_id() {
-        return album_id;
-    }
-
-    public void setAlbum_id(Long album_id) {
-        this.album_id = album_id;
     }
 
     public Long getLength() {
@@ -109,11 +103,28 @@ public class Song {
     public void setPlayback(Long playback) {
         this.playback = playback;
     }
+
     public Genre getGenre() {
         return genre;
     }
 
     public void setGenre(Genre genre) {
         this.genre = genre;
+    }
+
+    public Artist getArtist() {
+        return artist;
+    }
+
+    public void setArtist(Artist artist) {
+        this.artist = artist;
+    }
+
+    public Album getAlbum() {
+        return album;
+    }
+
+    public void setAlbum(Album album) {
+        this.album = album;
     }
 }

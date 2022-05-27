@@ -6,7 +6,7 @@ import java.util.Date;
 
 public class AlbumDTO {
     private Long id;
-    private String album_name;
+    private String name;
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date release_date;
     private byte[] image;
@@ -22,12 +22,12 @@ public class AlbumDTO {
         this.id = id;
     }
 
-    public String getAlbum_name() {
-        return album_name;
+    public String getName() {
+        return name;
     }
 
-    public void setAlbum_name(String album_name) {
-        this.album_name = album_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Date getRelease_date() {

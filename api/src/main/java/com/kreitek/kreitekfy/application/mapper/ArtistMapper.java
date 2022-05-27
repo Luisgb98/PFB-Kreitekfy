@@ -3,7 +3,6 @@ package com.kreitek.kreitekfy.application.mapper;
 import com.kreitek.kreitekfy.application.dto.ArtistDTO;
 import com.kreitek.kreitekfy.domain.entity.Artist;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface ArtistMapper extends EntityMapper<ArtistDTO, Artist>{

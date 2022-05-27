@@ -11,12 +11,12 @@ public class SongDTO implements Serializable {
 
     private String name;
 
-
+    /*
     private String artist_id;
+    private Long album_id;
+     */
 
     private Genre genre;
-
-    private Long album_id;
 
     private Long length;
 
@@ -29,8 +29,13 @@ public class SongDTO implements Serializable {
     private Long playback;
 
     private Long genreId;
-
     private String genreName;
+
+    private Long artistId;
+    private String artistName;
+
+    private Long albumId;
+    private String albumName;
 
     public SongDTO(){
 
@@ -52,28 +57,12 @@ public class SongDTO implements Serializable {
         this.name = name;
     }
 
-    public String getArtist_id() {
-        return artist_id;
-    }
-
-    public void setArtist_id(String artist_id) {
-        this.artist_id = artist_id;
-    }
-
     public Genre getGenre() {
         return genre;
     }
 
     public void setGenre(Genre genre) {
         this.genre = genre;
-    }
-
-    public Long getAlbum_id() {
-        return album_id;
-    }
-
-    public void setAlbum_id(Long album_id) {
-        this.album_id = album_id;
     }
 
     public Long getLength() {
@@ -130,5 +119,37 @@ public class SongDTO implements Serializable {
 
     public void setGenreName(String genreName) {
         this.genreName = genreName;
+    }
+
+    public Long getArtistId() {
+        return artistId;
+    }
+
+    public void setArtistId(Long artistId) {
+        this.artistId = artistId;
+    }
+
+    public String getArtistName() {
+        return artistName;
+    }
+
+    public void setArtistName(String artistName) {
+        this.artistName = artistName;
+    }
+
+    public Long getAlbumId() {
+        return albumId;
+    }
+
+    public void setAlbumId(Long albumId) {
+        this.albumId = albumId;
+    }
+
+    public String getAlbumName() {
+        return albumName;
+    }
+
+    public void setAlbumName(String albumName) {
+        this.albumName = albumName;
     }
 }
