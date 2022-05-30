@@ -46,6 +46,13 @@ public class GenreRestController {
     }
 
     @CrossOrigin
+    @PatchMapping(value = "/genres", produces = "application/json", consumes = "application/json")
+    ResponseEntity<GenreDTO> updateGenre(@RequestBody GenreDTO genreDTO) {
+        GenreDTO genreUpdated = this.genreService.saveGenre(genreDTO);
+        return new ResponseEntity<>(genreUpdated, HttpStatus.OK);
+    }
+
+    @CrossOrigin
     @DeleteMapping(value = "/genre/{genreId}")
     ResponseEntity<?> deleteGenre(@PathVariable Long genreId) {
         this.genreService.deleteGenre(genreId);

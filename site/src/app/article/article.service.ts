@@ -8,11 +8,4 @@ export class ArticleService {
 
   constructor() { }
 
-  public getArticles(): Article[] {
-    const articleToLet: Article[] = [];
-
-    for (let i = 1; i <= 10; i++) {
-      const article: Articulo = new Article(i,())
-    }
-  }
 }
