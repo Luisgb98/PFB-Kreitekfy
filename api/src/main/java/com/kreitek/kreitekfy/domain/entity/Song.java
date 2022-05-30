@@ -21,9 +21,9 @@ public class Song {
     @Column
     private Date release_date;
     @Column
-    private double assessment;
+    private double rating;
     @Column
-    private Long playback;
+    private Long views;
 
     @ManyToOne()
     @JoinColumn(name = "genre_id", nullable = false)
@@ -80,20 +80,20 @@ public class Song {
         this.release_date = release_date;
     }
 
-    public double getAssessment() {
-        return assessment;
+    public double getRating() {
+        return rating;
     }
 
-    public void setAssessment(double assessment) {
-        this.assessment = assessment;
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
-    public Long getPlayback() {
-        return playback;
+    public Long getViews() {
+        return views;
     }
 
-    public void setPlayback(Long playback) {
-        this.playback = playback;
+    public void setViews(Long views) {
+        this.views = views;
     }
 
     public Genre getGenre() {

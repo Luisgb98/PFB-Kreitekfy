@@ -19,9 +19,9 @@ public class SongDTO implements Serializable {
 
     private Date release_date;
 
-    private double assessment;
+    private double rating;
 
-    private Long playback;
+    private Long views;
 
     private Long genreId;
     private String genreName;
@@ -84,20 +84,20 @@ public class SongDTO implements Serializable {
         this.release_date = release_date;
     }
 
-    public double getAssessment() {
-        return assessment;
+    public double getRating() {
+        return rating;
     }
 
-    public void setAssessment(double assessment) {
-        this.assessment = assessment;
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
-    public Long getPlayback() {
-        return playback;
+    public Long getViews() {
+        return views;
     }
 
-    public void setPlayback(Long playback) {
-        this.playback = playback;
+    public void setViews(Long views) {
+        this.views = views;
     }
 
     public Long getGenreId() {

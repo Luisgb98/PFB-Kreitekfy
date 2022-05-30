@@ -2,9 +2,10 @@ package com.kreitek.kreitekfy.application.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class ArtistDTO {
+public class ArtistDTO implements Serializable {
     private Long id;
     private String name;
     @JsonFormat(pattern = "dd-MM-yyyy")

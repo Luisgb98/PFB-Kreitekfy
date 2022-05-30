@@ -3,10 +3,10 @@ package com.kreitek.kreitekfy.domain.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "ratings")
-public class Rating {
+@Table(name = "views")
+public class View {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ratingSequence")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "viewSequence")
     private Long id;
 
     @Column
@@ -20,7 +20,7 @@ public class Rating {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    public Rating() {
+    public View() {
     }
 
     public Long getId() {

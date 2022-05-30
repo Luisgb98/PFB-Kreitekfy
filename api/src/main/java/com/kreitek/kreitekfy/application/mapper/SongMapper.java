@@ -22,4 +22,11 @@ public interface SongMapper extends EntityMapper<SongDTO, Song> {
     @Mapping(source = "album.id", target = "albumId")
     @Mapping(source = "album.name", target = "albumName")
     SongDTO toDto(Song entity);
+
+    default Song fromId(Long id) {
+        if (id == null) return null;
+        Song song = new Song();
+        song.setId(id);
+        return song;
+    }
 }

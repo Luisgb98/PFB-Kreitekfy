@@ -1,8 +1,9 @@
 package com.kreitek.kreitekfy.application.dto;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserDTO {
+public class UserDTO implements Serializable {
     private Long id;
     private String name;
     private String email;
