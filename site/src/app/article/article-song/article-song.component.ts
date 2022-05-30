@@ -7,7 +7,7 @@ import { Article } from '../article.model';
   styleUrls: ['./article-song.component.scss']
 })
 export class ArticleSongComponent implements OnInit {
-  @Input() article: Article | undefined;
+  @Input() article?: Article;
 
   constructor() { }
 
