@@ -19,10 +19,6 @@ public class SongDTO implements Serializable {
     @JsonFormat(pattern = "dd-MM-yyyy")
     private Date release_date;
 
-    private double rating;
-
-    private Long views;
-
     private Long genreId;
     private String genreName;
 
@@ -32,6 +28,12 @@ public class SongDTO implements Serializable {
     private Long albumId;
     private String albumName;
     private byte[] albumImage;
+
+    private Long ratingId;
+    private double ratingValue;
+
+    private Long viewsId;
+    private Long viewsValue;
 
     public SongDTO(){
 
@@ -75,22 +77,6 @@ public class SongDTO implements Serializable {
 
     public void setRelease_date(Date release_date) {
         this.release_date = release_date;
-    }
-
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    public Long getViews() {
-        return views;
-    }
-
-    public void setViews(Long views) {
-        this.views = views;
     }
 
     public Long getGenreId() {
@@ -147,5 +133,37 @@ public class SongDTO implements Serializable {
 
     public void setAlbumImage(byte[] albumImage) {
         this.albumImage = albumImage;
+    }
+
+    public Long getRatingId() {
+        return ratingId;
+    }
+
+    public void setRatingId(Long ratingId) {
+        this.ratingId = ratingId;
+    }
+
+    public double getRatingValue() {
+        return ratingValue;
+    }
+
+    public void setRatingValue(double ratingValue) {
+        this.ratingValue = ratingValue;
+    }
+
+    public Long getViewsId() {
+        return viewsId;
+    }
+
+    public void setViewsId(Long viewsId) {
+        this.viewsId = viewsId;
+    }
+
+    public Long getViewsValue() {
+        return viewsValue;
+    }
+
+    public void setViewsValue(Long viewsValue) {
+        this.viewsValue = viewsValue;
     }
 }

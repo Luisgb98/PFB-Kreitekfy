@@ -18,10 +18,6 @@ public class Song {
     private Long length;
     @Column
     private Date release_date;
-    @Column
-    private double rating;
-    @Column
-    private Long views;
 
     @ManyToOne()
     @JoinColumn(name = "genre_id", nullable = false)
@@ -34,6 +30,14 @@ public class Song {
     @ManyToOne()
     @JoinColumn(name = "album_id", nullable = false)
     private Album album;
+
+    @ManyToOne()
+    @JoinColumn(name = "rating_id")
+    private Rating rating;
+
+    @ManyToOne()
+    @JoinColumn(name = "views_id")
+    private View view;
 
     public Song() {
     }
@@ -70,22 +74,6 @@ public class Song {
         this.release_date = release_date;
     }
 
-    public double getRating() {
-        return rating;
-    }
-
-    public void setRating(double rating) {
-        this.rating = rating;
-    }
-
-    public Long getViews() {
-        return views;
-    }
-
-    public void setViews(Long views) {
-        this.views = views;
-    }
-
     public Genre getGenre() {
         return genre;
     }
@@ -108,5 +96,21 @@ public class Song {
 
     public void setAlbum(Album album) {
         this.album = album;
+    }
+
+    public Rating getRating() {
+        return rating;
+    }
+
+    public void setRating(Rating rating) {
+        this.rating = rating;
+    }
+
+    public View getView() {
+        return view;
+    }
+
+    public void setView(View view) {
+        this.view = view;
     }
 }
