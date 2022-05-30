@@ -7,6 +7,7 @@ public class UserDTO {
     private String name;
     private String email;
     private String password;
+    private String rol;
     private byte[] avatar;
     private Date birthday;
 
@@ -43,6 +44,14 @@ public class UserDTO {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
     }
 
     public byte[] getAvatar() {
