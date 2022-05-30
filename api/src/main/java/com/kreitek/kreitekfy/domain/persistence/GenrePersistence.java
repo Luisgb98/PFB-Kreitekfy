@@ -8,7 +8,7 @@ import java.util.Optional;
 
 public interface GenrePersistence {
     List<Genre> getAllGenres();
-    Optional<Genre> getGenreById(Long idGenre);
+    Optional<Genre> getGenreById(Long genreId);
     Genre saveGenre(Genre genre);
-    void deleteGenre(Long idGenre);
+    void deleteGenre(Long genreId);
 }
