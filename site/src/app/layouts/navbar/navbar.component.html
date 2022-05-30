@@ -65,24 +65,17 @@
       <div class="container justify-content-center justify-content-md-between">
         <!-- Left links -->
         <ul class="navbar-nav flex-row">
-          <li class="nav-item me-2 me-lg-0">
-            <a class="nav-link" href="#" role="button" data-mdb-toggle="sidenav" data-mdb-target="#sidenav-1"
-              class="btn shadow-0 p-0 me-3" aria-controls="#sidenav-1" aria-haspopup="true">
-              <i class="fa fa-bars me-1"></i>
-              <span>Categories</span>
-            </a>
+          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
+            <a class="nav-link" [routerLink]="['']"><i class="fa fa-home"></i> Home</a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" [routerLink]="['']">Home</a>
+            <a class="nav-link" [routerLink]="['genre']"><i class="fa fa-compass"></i> Estilos</a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" [routerLink]="['genre']">Estilos</a>
+            <a class="nav-link" href="#"><i class="fa fa-user"></i> Artistas</a>
           </li>
           <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="#">Artistas</a>
-          </li>
-          <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-            <a class="nav-link" href="#">Canciones</a>
+            <a class="nav-link" href="#"><i class="fa fa-music"></i> Canciones</a>
           </li>
         </ul>
         <!-- Left links -->
