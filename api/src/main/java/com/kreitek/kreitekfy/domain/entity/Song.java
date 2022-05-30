@@ -16,8 +16,6 @@ public class Song {
 
     @Column
     private Long length;
-    @Lob
-    private byte[] image;
     @Column
     private Date release_date;
     @Column
@@ -62,14 +60,6 @@ public class Song {
 
     public void setLength(Long length) {
         this.length = length;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
     }
 
     public Date getRelease_date() {

@@ -1,5 +1,6 @@
 package com.kreitek.kreitekfy.application.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.kreitek.kreitekfy.domain.entity.Genre;
 
 import java.io.Serializable;
@@ -15,8 +16,7 @@ public class SongDTO implements Serializable {
 
     private Long length;
 
-    private byte[] image;
-
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date release_date;
 
     private double rating;
@@ -31,6 +31,7 @@ public class SongDTO implements Serializable {
 
     private Long albumId;
     private String albumName;
+    private byte[] albumImage;
 
     public SongDTO(){
 
@@ -66,14 +67,6 @@ public class SongDTO implements Serializable {
 
     public void setLength(Long length) {
         this.length = length;
-    }
-
-    public byte[] getImage() {
-        return image;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
     }
 
     public Date getRelease_date() {
@@ -146,5 +139,13 @@ public class SongDTO implements Serializable {
 
     public void setAlbumName(String albumName) {
         this.albumName = albumName;
+    }
+
+    public byte[] getAlbumImage() {
+        return albumImage;
+    }
+
+    public void setAlbumImage(byte[] albumImage) {
+        this.albumImage = albumImage;
     }
 }
