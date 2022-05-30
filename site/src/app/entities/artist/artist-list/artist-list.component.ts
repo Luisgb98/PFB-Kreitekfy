@@ -19,6 +19,32 @@ export class ArtistListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getAllArtists();
   }
 
+  public prepareArtistToDelete(artistId: number): void {
+    this.artistIdToDelete = artistId;
+  }
+
+  public deleteArtist(): void {
+    if (this.artistIdToDelete) {
+      this.artistService.deleteArtist(this.artistIdToDelete).subscribe({
+        next: (data) => {
+          this.getAllArtists();
+        },
+        error: (err) => {this.handleError(err)}
+      })
+    }
+  }
+
+  private getAllArtists(): void {
+    this.artistService.getAllArtists().subscribe({
+      next: (artistRequest) => { this.artists = artistRequest; },
+      error: (err) => { this.handleError(err); },
+    });
+  }
+
+  private handleError(error: any): void {
+    console.log(error);
+  }
 }
