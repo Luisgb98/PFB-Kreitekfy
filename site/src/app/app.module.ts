@@ -12,6 +12,8 @@ import { ArticleSongComponent } from './article/article-song/article-song.compon
 import { ArticleListComponent } from './article/article-list/article-list.component';
 import { GenreListComponent } from './entities/genre/genre-list/genre-list.component';
 import { GenreFormComponent } from './entities/genre/genre-form/genre-form.component';
+import { ArtistListComponent } from './entities/artist/artist-list/artist-list.component';
+import { ArtistFormComponent } from './entities/artist/artist-form/artist-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { GenreFormComponent } from './entities/genre/genre-form/genre-form.compo
     ArticleSongComponent,
     ArticleListComponent,
     GenreListComponent,
-    GenreFormComponent
+    GenreFormComponent,
+    ArtistListComponent,
+    ArtistFormComponent
   ],
   imports: [
     BrowserModule,
