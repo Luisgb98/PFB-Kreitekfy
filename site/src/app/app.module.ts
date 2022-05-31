@@ -19,6 +19,7 @@ import { AlbumListComponent } from './entities/album/album-list/album-list.compo
 import { AlbumFormComponent } from './entities/album/album-form/album-form.component';
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     SongListComponent,
     SongFormComponent,
     AlbumListComponent,
-    AlbumFormComponent
+    AlbumFormComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
