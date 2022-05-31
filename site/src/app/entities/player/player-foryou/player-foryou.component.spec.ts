@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BackofficeComponent } from './backoffice.component';
+import { PlayerForyouComponent } from './player-foryou.component';
 
-describe('BackofficeComponent', () => {
-  let component: BackofficeComponent;
-  let fixture: ComponentFixture<BackofficeComponent>;
+describe('PlayerForyouComponent', () => {
+  let component: PlayerForyouComponent;
+  let fixture: ComponentFixture<PlayerForyouComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BackofficeComponent ]
+      declarations: [ PlayerForyouComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BackofficeComponent);
+    fixture = TestBed.createComponent(PlayerForyouComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

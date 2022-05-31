@@ -8,8 +8,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './layouts/navbar/navbar.component';
 import { FooterComponent } from './layouts/footer/footer.component';
-import { ArticleSongComponent } from './article/article-song/article-song.component';
-import { ArticleListComponent } from './article/article-list/article-list.component';
 import { GenreListComponent } from './entities/genre/genre-list/genre-list.component';
 import { GenreFormComponent } from './entities/genre/genre-form/genre-form.component';
 import { ArtistListComponent } from './entities/artist/artist-list/artist-list.component';
@@ -27,8 +25,6 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
     HomeComponent,
     NavbarComponent,
     FooterComponent,
-    ArticleSongComponent,
-    ArticleListComponent,
     GenreListComponent,
     GenreFormComponent,
     ArtistListComponent,
