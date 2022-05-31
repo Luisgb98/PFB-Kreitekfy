@@ -70,7 +70,7 @@ public class SongRestController {
     }
 
     @CrossOrigin
-    @PatchMapping(value = "/albums", produces = "application/json", consumes = "application/json")
+    @PatchMapping(value = "/songs", produces = "application/json", consumes = "application/json")
     ResponseEntity<SongDTO> updateSong(@RequestBody SongDTO songDTO) {
         SongDTO songUpdated = this.songService.saveSong(songDTO);
         return new ResponseEntity<>(songUpdated, HttpStatus.OK);

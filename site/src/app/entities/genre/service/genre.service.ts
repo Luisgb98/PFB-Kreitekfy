@@ -10,8 +10,12 @@ export class GenreService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllGenres(): Observable<Genre[]> {
-    const urlEndpoint: string = "http://localhost:8080/kreitekfy/genres";
+  public getAllGenres(partialName?: string): Observable<Genre[]> {
+    let urlEndpoint: string = "http://localhost:8080/kreitekfy/genres";
+    if (partialName) {
+      urlEndpoint = urlEndpoint + "?partialName=" + partialName;
+
+    }
     return this.http.get<Genre[]>(urlEndpoint);
   }
 
@@ -34,7 +38,5 @@ export class GenreService {
     let urlEndpoint: string = "http://localhost:8080/kreitekfy/genre/" + genreIdToDelete;
     return this.http.delete<any>(urlEndpoint);
   }
-
-
 
 }

@@ -1,0 +1,84 @@
+<h1>ALBUM LIST</h1>
+
+<div id="buttonCreateContainer">
+  <button [routerLink]="['/album', 'new']">Nuevo álbum</button>
+</div>
+
+<table *ngIf="albums.length > 0">
+  <thead>
+    <th>Id</th>
+    <th>Nombre</th>
+    <th>Fecha de salida</th>
+    <th>Imagen</th>
+    <th>Acciones</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let album of albums">
+      <td>{{ album.id }}</td>
+      <td>
+        {{ album.name }}
+      </td>
+      <td>
+        {{ album.release_date }}
+      </td>
+      <td>
+        <img class="imgAlbum" [src]="'data:image/webp;base64,' + album.image" />
+      </td>
+      <td>
+        <button id="btnEditAlbum" [routerLink]="['/album', album.id]">
+          Editar Template
+        </button>
+        <button
+          id="btnDeleteAlbum"
+          data-bs-toggle="modal"
+          data-bs-target="#askConfirmationDelete"
+          (click)="prepareAlbumToDelete(album.id!)"
+        >
+          Eliminar
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="askConfirmationDelete"
+  tabindex="-1"
+  aria-labelledby="askConfirmationDelete"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Confirmación de borrado
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        ¿Desea eliminar el registro seleccionado? Esta operación no puede
+        deshacerse
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cancelar
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-bs-dismiss="modal"
+          (click)="deleteAlbum()"
+        >
+          Eliminar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

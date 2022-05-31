@@ -16,6 +16,10 @@ import { ArtistListComponent } from './entities/artist/artist-list/artist-list.c
 import { ArtistFormComponent } from './entities/artist/artist-form/artist-form.component';
 import { SongListComponent } from './entities/song/song-list/song-list.component';
 import { SongFormComponent } from './entities/song/song-form/song-form.component';
+import { AlbumListComponent } from './entities/album/album-list/album-list.component';
+import { AlbumFormComponent } from './entities/album/album-form/album-form.component';
+
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 @NgModule({
   declarations: [
@@ -30,13 +34,16 @@ import { SongFormComponent } from './entities/song/song-form/song-form.component
     ArtistListComponent,
     ArtistFormComponent,
     SongListComponent,
-    SongFormComponent
+    SongFormComponent,
+    AlbumListComponent,
+    AlbumFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AutoCompleteModule
   ],
   providers: [],
   bootstrap: [AppComponent]
