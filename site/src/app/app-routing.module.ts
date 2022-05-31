@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: 'album', component: AlbumListComponent },
   { path: 'album/:albumId', component: AlbumFormComponent },
   { path: 'song', component: SongListComponent },
-  { path: 'song/:songId', component: SongFormComponent }
+  { path: 'song/edit/:songId', component: SongFormComponent }
 ];
 
 @NgModule({
