@@ -19,6 +19,7 @@ export class AlbumListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.getAllAlbums();
   }
 
   public prepareAlbumToDelete(albumId: number): void {
