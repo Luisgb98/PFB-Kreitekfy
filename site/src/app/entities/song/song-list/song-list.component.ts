@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Album } from '../../album/model/album.model';
+import { AlbumService } from '../../album/service/album.service';
+import { Artist } from '../../artist/model/artist.model';
+import { ArtistService } from '../../artist/service/artist.service';
+import { Genre } from '../../genre/model/genre.model';
+import { GenreService } from '../../genre/service/genre.service';
 import { Song } from '../model/song.model';
 import { SongService } from '../service/song.service';
 
@@ -10,7 +16,12 @@ import { SongService } from '../service/song.service';
 })
 export class SongListComponent implements OnInit {
   genreId?: number;
+  song?: Song;
+
   songs: Song[] = [];
+  genres: Genre[] = [];
+  artists: Artist[] = [];
+  albums: Album[] = [];
 
   page: number = 0;
   size: number = 25;
@@ -22,13 +33,22 @@ export class SongListComponent implements OnInit {
   totalElements: number = 0;
 
   nameFilter?: string;
-  priceFilter?: number;
+  genreFilter?: string;
+  artistFilter?: string;
+  albumFilter?: string;
+
+  selectedGenre?: Genre;
+  selectedArtist?: Artist;
+  selectedAlbum?: Album;
 
   songIdToDelete?: number;
 
   constructor(
     private route: ActivatedRoute,
-    private songService: SongService
+    private songService: SongService,
+    private genreService: GenreService,
+    private artistService: ArtistService,
+    private albumService: AlbumService
   ) { }
 
   ngOnInit(): void {
@@ -67,12 +87,20 @@ export class SongListComponent implements OnInit {
   private buildFilters(): string | undefined {
     const filters: string[] = [];
 
-    if (this.genreId) {
-      filters.push("genre.id:EQUAL:" + this.genreId);
-    }
-
     if (this.nameFilter) {
       filters.push("name:MATCH:" + this.nameFilter);
+    }
+
+    if (this.genreFilter) {
+      filters.push("genre.name:EQUAL:" + this.selectedGenre!.name);
+    }
+
+    if (this.artistFilter) {
+      filters.push("artist.name:EQUAL:" + this.artistFilter);
+    }
+
+    if (this.albumFilter) {
+      filters.push("album.name:EQUAL:" + this.albumFilter);
     }
 
     if (filters.length > 0) {
@@ -105,6 +133,29 @@ export class SongListComponent implements OnInit {
         this.handleError(err);
       },
     });
+  }
+
+  public getAllGenres(event?: any): void {
+    let genreSearch: string | undefined;
+    if (event?.query) {
+      genreSearch = event.query;
+    }
+    this.genreService.getAllGenres(genreSearch).subscribe({
+      next: (genresFiltered) => {
+        this.genres = genresFiltered;
+      },
+      error: (err) => {
+        this.handleError(err);
+      },
+    });
+  }
+
+  public genreSelected(): void {
+    this.song!.genreName = this.selectedGenre!.name;
+  }
+
+  public genreUnselected(): void {
+    this.song!.genreName = '';
   }
 
   private handleError(error: any): void {
