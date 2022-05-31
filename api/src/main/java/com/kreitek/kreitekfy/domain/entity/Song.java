@@ -17,7 +17,7 @@ public class Song {
     @Column
     private Long length;
     @Column
-    private Date release_date;
+    private Date releaseDate;
 
     @ManyToOne()
     @JoinColumn(name = "genre_id", nullable = false)
@@ -66,12 +66,12 @@ public class Song {
         this.length = length;
     }
 
-    public Date getRelease_date() {
-        return release_date;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease_date(Date release_date) {
-        this.release_date = release_date;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public Genre getGenre() {

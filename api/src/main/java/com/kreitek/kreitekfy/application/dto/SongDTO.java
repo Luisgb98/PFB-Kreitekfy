@@ -15,7 +15,7 @@ public class SongDTO implements Serializable {
     private Long length;
 
     @JsonFormat(pattern = "dd-MM-yyyy")
-    private Date release_date;
+    private Date releaseDate;
 
     private Long genreId;
     private String genreName;
@@ -61,12 +61,12 @@ public class SongDTO implements Serializable {
         this.length = length;
     }
 
-    public Date getRelease_date() {
-        return release_date;
+    public Date getReleaseDate() {
+        return releaseDate;
     }
 
-    public void setRelease_date(Date release_date) {
-        this.release_date = release_date;
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 
     public Long getGenreId() {

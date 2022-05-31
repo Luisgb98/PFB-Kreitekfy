@@ -11,8 +11,7 @@ import { PlayerService } from '../service/player.service';
 export class PlayerNewComponent implements OnInit {
   songs: Song[] = [];
   size: number = 5;
-  //sort: string = "name,asc";
-  sort: string = "releaseDate, desc";
+  sort: string = "releaseDate,desc";
   constructor(
     private route: ActivatedRoute,
     private playerService: PlayerService
