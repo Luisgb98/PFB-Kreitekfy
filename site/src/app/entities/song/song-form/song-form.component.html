@@ -128,7 +128,7 @@
       id="imagen"
       (change)="includeImageInAlbum($event)"
     />
-    <img *ngIf="album.image" [src]="'data:image/webp;base64,' + album.image" />
+    <img *ngIf="song.albumImage" [src]="'data:image/webp;base64,' + song.albumImage" />
   </div>
 
   <div class="buttonsForm">
