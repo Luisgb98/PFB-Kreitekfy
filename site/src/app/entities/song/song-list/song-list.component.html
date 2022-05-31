@@ -1,4 +1,5 @@
-<h1>SONG LIST</h1>
+<div class="bg-dark">
+<h2 class="text-dark ps-5">.</h2>
 
 <div class="containerFiltros">
   <div id="filterTitle">Filtros</div>
@@ -8,7 +9,7 @@
       <!-- Name -->
       <div class="form-group" class="col-12 col-md-6">
         <label for="name">Nombre</label>
-        <input type="text" [(ngModel)]="nameFilter" name="name" />
+        <input type="text" [(ngModel)]="nameFilter" name="name"/>
       </div>
 
       <!-- Genre -->
@@ -52,8 +53,8 @@
   </form>
 </div>
 
-<div id="buttonCreateContainer">
-  <button [routerLink]="['/song', 'new']">Nuevo artículo</button>
+<div class="botoneraCreate">
+  <button [routerLink]="['/song', 'new']" class="btn btn-secondary m-4">Nuevo artículo</button>
 </div>
 
 <table *ngIf="songs.length > 0">
@@ -172,4 +173,6 @@
       </div>
     </div>
   </div>
+</div>
+
 </div>

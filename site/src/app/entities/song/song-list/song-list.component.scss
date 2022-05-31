@@ -69,16 +69,25 @@ table {
   margin-top: 20px;
 }
 
+.botoneraCreate {
+  width: 100%;
+  text-align: start;
+  margin-top: 20px;
+  padding-left: 24%;
+}
+
+
 .botoneraPaginacion button,
 .botoneraPaginacion span {
-  margin-left: 10px;
+  margin-left: 50px;
+  color: #f2f2f2;
 }
 
 .containerFiltros {
   margin-top: 25px;
-  width: 85%;
+  width: 50%;
   margin: 0 auto;
-  background-color: whitesmoke;
+  background-color: rgb(117, 73, 111);
   padding: 20px;
   border-radius: 10px;
   margin-bottom: 20px;
@@ -89,17 +98,19 @@ table {
 
     label {
       display: block;
+      color: #f2f2f2;
     }
 
     input[type="text"],
     input[type="number"] {
-      width: 100%;
+      width: 87%;
+      border-radius: 5px;
     }
   }
 
   #filterTitle {
     font-size: 14pt;
-    background: black;
+    background: rgb(141, 88, 134);
     color: white;
     width: 200px;
     padding-left: 20px;
@@ -112,4 +123,6 @@ table {
   #btnSearch {
     margin-top: 20px;
   }
+
+
 }
