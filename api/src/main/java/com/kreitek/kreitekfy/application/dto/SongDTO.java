@@ -12,8 +12,6 @@ public class SongDTO implements Serializable {
 
     private String name;
 
-    private Genre genre;
-
     private Long length;
 
     @JsonFormat(pattern = "dd-MM-yyyy")
@@ -53,14 +51,6 @@ public class SongDTO implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Genre getGenre() {
-        return genre;
-    }
-
-    public void setGenre(Genre genre) {
-        this.genre = genre;
     }
 
     public Long getLength() {
