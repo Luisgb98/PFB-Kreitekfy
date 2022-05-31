@@ -20,6 +20,10 @@ import { AlbumFormComponent } from './entities/album/album-form/album-form.compo
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { LoginComponent } from './login/login.component';
+import { PlayerNewComponent } from './entities/player/player-new/player-new.component';
+import { PlayerViewsComponent } from './entities/player/player-views/player-views.component';
+import { PlayerRatedComponent } from './entities/player/player-rated/player-rated.component';
+import { PlayerForyouComponent } from './entities/player/player-foryou/player-foryou.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +39,11 @@ import { LoginComponent } from './login/login.component';
     SongFormComponent,
     AlbumListComponent,
     AlbumFormComponent,
-    LoginComponent
+    LoginComponent,
+    PlayerNewComponent,
+    PlayerViewsComponent,
+    PlayerRatedComponent,
+    PlayerForyouComponent
   ],
   imports: [
     BrowserModule,
