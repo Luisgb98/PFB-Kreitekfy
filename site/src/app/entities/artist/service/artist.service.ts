@@ -10,8 +10,12 @@ export class ArtistService {
 
   constructor(private http: HttpClient) { }
 
-  public getAllArtists(): Observable<Artist[]> {
-    const urlEndpoint: string = "http://localhost:8080/kreitekfy/artists";
+  public getAllArtists(partialName?: string): Observable<Artist[]> {
+    let urlEndpoint: string = "http://localhost:8080/kreitekfy/artists";
+    if (partialName) {
+      urlEndpoint = urlEndpoint + "?partialName=" + partialName;
+
+    }
     return this.http.get<Artist[]>(urlEndpoint);
   }
 

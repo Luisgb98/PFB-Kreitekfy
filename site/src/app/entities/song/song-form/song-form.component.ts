@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Album } from '../../album/model/album.model';
+import { AlbumService } from '../../album/service/album.service';
+import { Artist } from '../../artist/model/artist.model';
+import { ArtistService } from '../../artist/service/artist.service';
 import { Genre } from '../../genre/model/genre.model';
 import { GenreService } from '../../genre/service/genre.service';
 import { Song } from '../model/song.model';
@@ -17,12 +20,18 @@ export class SongFormComponent implements OnInit {
   song?: Song;
   selectedGenre?: Genre;
   genres: Genre[] = [];
+  selectedArtist?: Artist;
+  artists: Artist[] = [];
+  selectedAlbum?: Album;
+  albums: Album[] = [];
   album?: Album;
 
   constructor(
     private route: ActivatedRoute,
     private songService: SongService,
-    private genreService: GenreService
+    private genreService: GenreService,
+    private artistService: ArtistService,
+    private albumService: AlbumService
   ) { }
 
   ngOnInit(): void {
@@ -53,16 +62,6 @@ export class SongFormComponent implements OnInit {
     });
   }
 
-  public saveSong(): void {
-    if (this.mode === 'NEW') {
-      this.insertSong();
-    }
-
-    if (this.mode === 'UPDATE') {
-      this.updateSong();
-    }
-  }
-
   public genreSelected(): void {
     this.song!.genreId = this.selectedGenre!.id;
     this.song!.genreName = this.selectedGenre!.name;
@@ -71,6 +70,66 @@ export class SongFormComponent implements OnInit {
   public genreUnselected(): void {
     this.song!.genreId = undefined;
     this.song!.genreName = '';
+  }
+
+  public getAllArtists(event?: any): void {
+    let artistSearch: string | undefined;
+    if (event?.query) {
+      artistSearch = event.query;
+    }
+    this.artistService.getAllArtists(artistSearch).subscribe({
+      next: (artistsFiltered) => {
+        this.artists = artistsFiltered;
+      },
+      error: (err) => {
+        this.handleError(err);
+      },
+    });
+  }
+
+  public artistSelected(): void {
+    this.song!.artistId = this.selectedArtist!.id;
+    this.song!.artistName = this.selectedArtist!.name;
+  }
+
+  public artistUnselected(): void {
+    this.song!.artistId = undefined;
+    this.song!.artistName = '';
+  }
+
+  public getAllAlbums(event?: any): void {
+    let albumSearch: string | undefined;
+    if (event?.query) {
+      albumSearch = event.query;
+    }
+    this.albumService.getAllAlbums(albumSearch).subscribe({
+      next: (albumsFiltered) => {
+        this.albums = albumsFiltered;
+      },
+      error: (err) => {
+        this.handleError(err);
+      },
+    });
+  }
+
+  public albumSelected(): void {
+    this.song!.albumId = this.selectedAlbum!.id;
+    this.song!.albumName = this.selectedAlbum!.name;
+  }
+
+  public albumUnselected(): void {
+    this.song!.albumId = undefined;
+    this.song!.albumName = '';
+  }
+
+  public saveSong(): void {
+    if (this.mode === 'NEW') {
+      this.insertSong();
+    }
+
+    if (this.mode === 'UPDATE') {
+      this.updateSong();
+    }
   }
 
   public includeImageInAlbum(event: any): void {
@@ -152,6 +211,15 @@ export class SongFormComponent implements OnInit {
           songRequest.genreId!,
           songRequest.genreName!
         );
+        this.selectedArtist = new Artist(
+          songRequest.artistId!,
+          songRequest.artistName!
+        );
+        this.selectedAlbum = new Album(
+          songRequest.albumId!,
+          songRequest.albumName!
+        );
+        //TODO
       },
       error: (err) => {
         this.handleError(err);

@@ -1,13 +1,13 @@
 export class Artist {
   id: number | undefined;
   name: string;
-  avatar: string;
+  avatar?: string;
   birthdate?: string;
 
   constructor(
     id: number | undefined,
     name: string,
-    avatar: string,
+    avatar?: string,
     birthdate?: string
   ) {
     this.id = id;

@@ -76,19 +76,19 @@
 
   <!-- Id: solo visible si estamos en edición (pero no será editable) -->
   <div class="form-group">
-    <label for="id">Id</label>
+    <label for="genreId">Id</label>
     <input
       disabled
       type="number"
-      [(ngModel)]="song.id"
-      name="id"
+      [(ngModel)]="song.genreId"
+      name="genreId"
       class="form-control"
-      id="price"
+      id="genreId"
       #price="ngModel"
     />
   </div>
 
-  <!-- Genre Id -->
+  <!-- Genre name -->
   <div class="form-group">
     <label for="genreId">Género</label>
     <p-autoComplete
@@ -104,21 +104,67 @@
     ></p-autoComplete>
   </div>
 
-  <!-- genreName -->
+  <!-- Id: solo visible si estamos en edición (pero no será editable) -->
   <div class="form-group">
-    <label for="genreName">Género</label>
+    <label for="artistId">Id</label>
     <input
-      type="text"
-      [(ngModel)]="song.genreName"
-      name="genreName"
+      disabled
+      type="number"
+      [(ngModel)]="song.artistId"
+      name="artistId"
       class="form-control"
-      id="genreName"
-      #description="ngModel"
-      maxlength="2000"
+      id="artistId"
+      #price="ngModel"
     />
   </div>
 
-  <!-- Imagen -->
+  <!-- Artist name -->
+  <div class="form-group">
+    <label for="artistId">Artista</label>
+    <p-autoComplete
+      [(ngModel)]="selectedArtist"
+      name="selectedArtist"
+      [suggestions]="artists"
+      (completeMethod)="getAllArtists($event)"
+      field="name"
+      (onSelect)="artistSelected()"
+      (onClear)="artistUnselected()"
+      [required]="true"
+      [forceSelection]="true"
+    ></p-autoComplete>
+  </div>
+
+  <!-- Id: solo visible si estamos en edición (pero no será editable) -->
+  <div class="form-group">
+    <label for="albumId">Id</label>
+    <input
+      disabled
+      type="number"
+      [(ngModel)]="song.albumId"
+      name="albumId"
+      class="form-control"
+      id="albumId"
+      #price="ngModel"
+    />
+  </div>
+
+  <!-- Album name -->
+  <div class="form-group">
+    <label for="albumId">Álbum</label>
+    <p-autoComplete
+      [(ngModel)]="selectedAlbum"
+      name="selectedAlbum"
+      [suggestions]="albums"
+      (completeMethod)="getAllAlbums($event)"
+      field="name"
+      (onSelect)="albumSelected()"
+      (onClear)="albumUnselected()"
+      [required]="true"
+      [forceSelection]="true"
+    ></p-autoComplete>
+  </div>
+
+  <!-- AlbumImagen -->
   <div class="form-group">
     <label for="imagen">Imagen</label>
     <input
