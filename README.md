@@ -6,7 +6,6 @@ Grupo formado por:
 
 - Mario Medina (Kumiihoo)
 - Miguel Ángel Palomino (mapaljim)
-- Romel Zela (RomelZela)
 - Luis Guisado (Luisgb98)
 
 # TUTOR: Hector Fornés (hecforga)
