@@ -24,6 +24,7 @@ import { PlayerNewComponent } from './entities/player/player-new/player-new.comp
 import { PlayerViewsComponent } from './entities/player/player-views/player-views.component';
 import { PlayerRatedComponent } from './entities/player/player-rated/player-rated.component';
 import { PlayerForyouComponent } from './entities/player/player-foryou/player-foryou.component';
+import { SongCardComponent } from './entities/song/song-card/song-card.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { PlayerForyouComponent } from './entities/player/player-foryou/player-fo
     PlayerNewComponent,
     PlayerViewsComponent,
     PlayerRatedComponent,
-    PlayerForyouComponent
+    PlayerForyouComponent,
+    SongCardComponent
   ],
   imports: [
     BrowserModule,

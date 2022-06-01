@@ -6,6 +6,7 @@ import { ArtistFormComponent } from './entities/artist/artist-form/artist-form.c
 import { ArtistListComponent } from './entities/artist/artist-list/artist-list.component';
 import { GenreFormComponent } from './entities/genre/genre-form/genre-form.component';
 import { GenreListComponent } from './entities/genre/genre-list/genre-list.component';
+import { SongCardComponent } from './entities/song/song-card/song-card.component';
 import { SongFormComponent } from './entities/song/song-form/song-form.component';
 import { SongListComponent } from './entities/song/song-list/song-list.component';
 import { HomeComponent } from './home/home.component';
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'album', component: AlbumListComponent },
   { path: 'album/:albumId', component: AlbumFormComponent },
   { path: 'song', component: SongListComponent },
-  { path: 'song/edit/:songId', component: SongFormComponent }
+  { path: 'song/edit/:songId', component: SongFormComponent },
+  { path: 'song/:songId', component: SongCardComponent }
 ];
 
 @NgModule({
