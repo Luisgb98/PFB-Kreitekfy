@@ -1,4 +1,4 @@
-<h1>ARTIST FORM</h1>
+<div class="bg-dark m-0">
 
 <form
   *ngIf="artist"
@@ -73,7 +73,10 @@
     />
   </div>
 
-  <div class="buttonsForm">
-    <button (click)="saveArtist()" [routerLink]="['/artist']" [disabled]="artistForm.invalid">Guardar</button>
+  <div class="col-12">
+    <button class="btn btn-secondary botoneraCreate" (click)="saveArtist()" [routerLink]="['/artist']" [disabled]="artistForm.invalid">Guardar</button>
   </div>
+  
+
 </form>
+</div>

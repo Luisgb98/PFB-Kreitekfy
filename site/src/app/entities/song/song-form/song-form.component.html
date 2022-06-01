@@ -1,4 +1,4 @@
-<h1>SONG FORM</h1>
+<div class="bg-dark m-0">
 
 <form
   *ngIf="song"
@@ -62,7 +62,7 @@
 
   <!-- release_date -->
   <div class="form-group">
-    <label for="release_date">Fecha de salida</label>
+    <label for="releaseate">Fecha de salida</label>
     <input
       type="text"
       [(ngModel)]="song.releaseDate"
@@ -176,8 +176,10 @@
     />
     <img *ngIf="song.albumImage" [src]="'data:image/webp;base64,' + song.albumImage" />
   </div>
-
-  <div class="buttonsForm">
-    <button (click)="saveSong()" [routerLink]="['/song']" [disabled]="songForm.invalid">Guardar</button>
+  
+  <div class="col-12">
+    <button class="btn btn-secondary botoneraCreate" (click)="saveSong()" [routerLink]="['/song']" [disabled]="songForm.invalid">Guardar</button>
   </div>
+  
 </form>
+</div>

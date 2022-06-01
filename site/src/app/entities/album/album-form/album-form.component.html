@@ -1,4 +1,4 @@
-<h1>ALBUM FORM</h1>
+<div class="bg-dark m-0">
 
 <form
   *ngIf="album"
@@ -73,7 +73,10 @@
     <img *ngIf="album.image" [src]="'data:image/webp;base64,' + album.image" />
   </div>
 
-  <div class="buttonsForm">
-    <button (click)="saveAlbum()" [routerLink]="['/album']" [disabled]="albumForm.invalid">Guardar</button>
+  <div class="col-12">
+    <button class="btn btn-secondary botoneraCreate" (click)="saveAlbum()" [routerLink]="['/album']" [disabled]="albumForm.invalid">Guardar</button>
   </div>
+  
+
 </form>
+</div>
