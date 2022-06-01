@@ -5,71 +5,40 @@
     <div class="container">
       <div class="row">
         <!-- Left elements -->
-        <div
-          class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0"
-        >
+        <div class="col-md-4 d-flex justify-content-center justify-content-md-start mb-3 mb-md-0">
           <a [routerLink]="['']" id="logo" class="ms-md-2">
-            <img src=".\assets\img\logo Kreitekfy.png" height="160" />
+            <img src=".\assets\img\logo Kreitekfy.png" height="145" />
           </a>
         </div>
         <!-- Left elements -->
 
         <!-- Center elements -->
-        <div
-          class="col-md-4 p-5 d-md-inline-block justify-content-center justify-content-md-center"
-        >
+        <div class="col-md-4 p-5 d-md-inline-block justify-content-center justify-content-md-center">
           <form class="d-flex input-group w-auto my-auto mb-3 mb-md-0">
-            <input
-              autocomplete="off"
-              type="search"
-              class="form-control rounded"
-              placeholder="Search"
-            />
-            <span id="square" class="input-group-text border-0 d-none d-lg-flex"
-              ><i id="search" class="fa fa-search"></i
-            ></span>
+            <input autocomplete="off" type="search" class="form-control rounded" placeholder="Search" />
+            <span id="square" class="input-group-text border-0 d-none d-lg-flex"><i id="search"
+                class="fa fa-search"></i></span>
           </form>
         </div>
         <!-- Center elements -->
 
         <!-- Right elements -->
-        <div
-          class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center"
-        >
+        <div class="col-md-4 d-flex justify-content-center justify-content-md-end align-items-center">
           <div class="d-flex">
             <!-- Notification -->
             <div class="dropdown">
-              <a
-                class="text-reset me-3 hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-              >
+              <a class="text-reset me-3 hidden-arrow" href="#" id="navbarDropdownMenuLink" role="button"
+                data-mdb-toggle="dropdown" aria-expanded="false">
                 <i class="fa fa-bell regular"></i>
               </a>
             </div>
             <!-- User -->
             <div class="dropdown">
-              <a
-                class="text-reset d-flex align-items-center hidden-arrow"
-                href="#"
-                id="navbarDropdownMenuLink"
-                role="button"
-                data-mdb-toggle="dropdown"
-                aria-expanded="false"
-                type="buttonModalUser"
-                data-bs-toggle="modal"
-                data-bs-target="#modalUserNew"
-              >
-                <img
-                  src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg"
-                  class="rounded-circle"
-                  height="22"
-                  alt=""
-                  loading="lazy"
-                />
+              <a class="text-reset d-flex align-items-center hidden-arrow" href="#" id="navbarDropdownMenuLink"
+                role="button" data-mdb-toggle="dropdown" aria-expanded="false" type="buttonModalUser"
+                data-bs-toggle="modal" data-bs-target="#modalUserNew">
+                <img src="https://mdbootstrap.com/img/Photos/Avatars/img (31).jpg" class="rounded-circle" height="22"
+                  alt="" loading="lazy" />
               </a>
             </div>
           </div>
@@ -87,39 +56,24 @@
       <!-- Left links -->
       <ul class="navbar-nav flex-row">
         <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-          <a class="nav-link" [routerLink]="['']"
-            ><i class="fa fa-home"></i> Home</a
-          >
+          <a class="nav-link" [routerLink]="['']"><i class="fa fa-home"></i> Home</a>
         </li>
         <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['genre']"
-            ><i class="fa fa-compass"></i> Estilos</a
-          >
+          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['genre']"><i class="fa fa-compass"></i> Estilos</a>
         </li>
         <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['artist']"
-            ><i class="fa fa-user"></i> Artistas</a
-          >
+          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['artist']"><i class="fa fa-user"></i> Artistas</a>
         </li>
         <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['album']"
-            ><i class="fa fa-plus-circle"></i> Álbumes</a
-          >
+          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['album']"><i class="fa fa-plus-circle"></i> Álbumes</a>
         </li>
         <li class="nav-item me-2 me-lg-0 d-none d-md-inline-block">
-          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['song']"
-            ><i class="fa fa-music"></i> Canciones</a
-          >
+          <a *ngIf="nav.visible" class="nav-link" [routerLink]="['song']"><i class="fa fa-music"></i> Canciones</a>
         </li>
       </ul>
       <!-- Left links -->
 
-      <button
-        id="app"
-        class="btn btn-outline-light"
-        data-mdb-ripple-color="dark"
-        type="button"
-      >
+      <button id="app" class="btn btn-outline-light" data-mdb-ripple-color="dark" type="button">
         Descarga la app<i class="fa fa-download ms-2"></i>
       </button>
     </div>
