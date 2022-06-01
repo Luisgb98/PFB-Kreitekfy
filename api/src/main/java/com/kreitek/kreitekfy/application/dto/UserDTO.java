@@ -1,5 +1,7 @@
 package com.kreitek.kreitekfy.application.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -10,6 +12,7 @@ public class UserDTO implements Serializable {
     private String password;
     private String rol;
     private byte[] avatar;
+    @JsonFormat(pattern = "dd-MM-yyyy")
     private Date birthday;
 
     public UserDTO() {

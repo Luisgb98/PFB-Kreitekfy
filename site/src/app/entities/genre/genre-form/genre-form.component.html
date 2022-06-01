@@ -47,21 +47,7 @@
     </small>
   </div>
 
-  <!-- Descripción -->
-  <div class="form-group">
-    <label for="name">Nombre</label>
-    <input
-      type="text"
-      [(ngModel)]="genre.name"
-      name="description"
-      class="form-control"
-      id="description"
-      #description="ngModel"
-      maxlength="2000"
-    />
-  </div>
-
   <div class="buttonsForm">
-    <button (click)="saveGenre()" [disabled]="genreForm.invalid">Guardar</button>
+    <button (click)="saveGenre()" [routerLink]="['/genre']" [disabled]="genreForm.invalid">Guardar</button>
   </div>
 </form>
