@@ -1,4 +1,5 @@
-<div *ngIf="song" id="container" class="container d-flex bg-dark">
+<section class="bg-dark p-5">
+<div *ngIf="song" class="container bg-dark">
   <section class="container mx-auto my-auto" style="width: 55%;">
     <div class="card">
       <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
@@ -39,9 +40,12 @@
             <span id="length" class="badge rounded-pill bg-primary m-1">{{ song.genreName }}</span>
           </li>
         </ul>
-        <a href="" class="btn btn-success  p-md-2 mb-0"><i class="fa fa-play"></i> Reproducir</a>
+        <div id="container">
+        <a href="" class="btn btn-success p-md-2 mb-0"><i class="fa fa-play"></i> Reproducir</a>
+      </div>
       </div>
     </div>
-
   </section>
 </div>
+
+</section>
