@@ -1,14 +1,47 @@
-<h1 *ngIf="song">SONG CARD OF {{ song.id }}</h1>
+<div *ngIf="song" id="container" class="container d-flex bg-dark">
+  <section class="container mx-auto my-auto" style="width: 55%;">
+    <div class="card">
+      <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+        <img [src]="'data:image/webp;base64,' + song.albumImage" class="card-img-top" alt="...">
+        <a href="#!">
+          <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+        </a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title font-weight-bold"><a>{{ song.name }}</a></h5>
+        <ul class="list-unstyled list-inline mb-0">
+          <li class="list-inline-item me-0">
+            <i class="fa fa-star text-warning fa-xs"> </i>
+          </li>
+          <li class="list-inline-item me-0">
+            <i class="fa fa-star text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item me-0">
+            <i class="fa fa-star text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item me-0">
+            <i class="fa fa-star text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fa fa-star-half-alt text-warning fa-xs"></i>
+          </li>
+          <li class="list-inline-item">
+            <p class="text-muted">4.5 (413)</p>
+          </li>
+        </ul>
+        <p class="mb-2"><i class="fa fa-music"></i> {{ song.albumName }}</p>
+        <p class="mb-2"><i class="fa fa-user"></i> {{ song.artistName }}</p>
+        <p class="mb-2"><i class="fa fa-clock-o"></i> {{ song.length }}</p>
+        <hr class="my-4" />
+        <p class="lead"><strong>Género</strong></p>
+        <ul class="list-unstyled list-inline d-flex justify-content-between">
+          <li class="list-inline-item me-0">
+            <span id="length" class="badge rounded-pill bg-primary m-1">{{ song.genreName }}</span>
+          </li>
+        </ul>
+        <a href="" class="btn btn-success  p-md-2 mb-0"><i class="fa fa-play"></i> Reproducir</a>
+      </div>
+    </div>
 
-<div *ngIf="song" class="card" style="width: 18rem;">
-  <img [src]="'data:image/webp;base64,' + song.albumImage" class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Nombre de la canción: {{ song.name }}</h5>
-    <p class="card-text">Duración: {{ song.length }}</p>
-  </div>
-  <ul class="list-group list-group-flush">
-    <li class="list-group-item">An item</li>
-    <li class="list-group-item">A second item</li>
-    <li class="list-group-item">A third item</li>
-  </ul>
+  </section>
 </div>
