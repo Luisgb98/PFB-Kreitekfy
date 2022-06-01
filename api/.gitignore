@@ -36,3 +36,5 @@ api/kreitekfy.mv.db
 
 ### VS Code ###
 .vscode/
+/kreitekfy.mv.db
+/kreitekfy.trace.db
