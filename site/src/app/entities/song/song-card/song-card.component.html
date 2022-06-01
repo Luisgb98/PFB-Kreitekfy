@@ -1,1 +1,14 @@
-<p>song-card works!</p>
+<h1 *ngIf="song">SONG CARD OF {{ song.id }}</h1>
+
+<div *ngIf="song" class="card" style="width: 18rem;">
+  <img [src]="'data:image/webp;base64,' + song.albumImage" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Nombre de la canción: {{ song.name }}</h5>
+    <p class="card-text">Duración: {{ song.length }}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">An item</li>
+    <li class="list-group-item">A second item</li>
+    <li class="list-group-item">A third item</li>
+  </ul>
+</div>

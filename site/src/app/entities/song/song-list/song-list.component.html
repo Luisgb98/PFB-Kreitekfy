@@ -96,8 +96,11 @@
       <td>{{ song.viewsId }}</td>
       <td>{{ song.viewsValue }}</td>
       <td>
+        <button id="btnPlaySong" [routerLink]="['/song', song.id]">
+          Reproducir
+        </button>
         <button id="btnEditSong" [routerLink]="['/song/edit', song.id]">
-          Editar Template
+          Editar canción
         </button>
         <button
           id="btnDeleteSong"
