@@ -1,4 +1,6 @@
-<h3>NOVEDADES</h3>
+<div class="bg-dark">
+
+<h3 class="text-white">NOVEDADES</h3>
 
 <div class="container d-flex flex-row">
 <div class="card m-2" style="width: 18rem;" *ngFor="let song of songs">
@@ -9,4 +11,6 @@
       <a [routerLink]="['/song', song.id]" class="btn btn-primary">Reproducir</a>
     </div>
   </div>
+</div>
+
 </div>

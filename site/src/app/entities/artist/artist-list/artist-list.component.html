@@ -1,83 +1,65 @@
-<h1>ARTIST LIST</h1>
+<div class="bg-dark">
+<div class="text-dark pt-2">.</div>
+  <table *ngIf="artists.length > 0">
+    <thead>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Avatar</th>
+      <th>Fecha de nacimiento</th>
+      <th>Acciones</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let artist of artists">
+        <td>{{ artist.id }}</td>
+        <td>
+          {{ artist.name }}
+        </td>
+        <td>
+          <img class="imgArtist" [src]="'data:image/webp;base64,' + artist.avatar" />
+        </td>
+        <td>
+          {{ artist.birthdate }}
+        </td>
+        <td>
+          <button id="btnEditArtist" [routerLink]="['/artist', artist.id]">
+            Editar
+          </button>
+          <button id="btnDeleteArtist" data-bs-toggle="modal" data-bs-target="#askConfirmationDelete"
+            (click)="prepareArtistToDelete(artist.id!)">
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 
-<div id="buttonCreateContainer">
-  <button [routerLink]="['/artist', 'new']">Nuevo artista</button>
-</div>
+  <div class="botoneraCreate">
+    <button [routerLink]="['/artist', 'new']" class="btn btn-secondary m-4">Nuevo artista</button>
+  </div>
 
-<table *ngIf="artists.length > 0">
-  <thead>
-    <th>Id</th>
-    <th>Nombre</th>
-    <th>Avatar</th>
-    <th>Fecha de nacimiento</th>
-    <th>Acciones</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let artist of artists">
-      <td>{{ artist.id }}</td>
-      <td>
-        {{ artist.name }}
-      </td>
-      <td>
-        <img class="imgArtist" [src]="'data:image/webp;base64,' + artist.avatar" />
-      </td>
-      <td>
-        {{ artist.birthdate }}
-      </td>
-      <td>
-        <button id="btnEditArtist" [routerLink]="['/artist', artist.id]">
-          Editar Template
-        </button>
-        <button
-          id="btnDeleteArtist"
-          data-bs-toggle="modal"
-          data-bs-target="#askConfirmationDelete"
-          (click)="prepareArtistToDelete(artist.id!)"
-        >
-          Eliminar
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<!-- Modal -->
-<div
-  class="modal fade"
-  id="askConfirmationDelete"
-  tabindex="-1"
-  aria-labelledby="askConfirmationDelete"
-  aria-hidden="true"
->
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">
-          Confirmación de borrado
-        </h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">
-        ¿Desea eliminar el registro seleccionado? Esta operación no puede
-        deshacerse
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Cancelar
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-bs-dismiss="modal"
-          (click)="deleteArtist()"
-        >
-          Eliminar
-        </button>
+  <!-- Modal -->
+  <div class="modal fade" id="askConfirmationDelete" tabindex="-1" aria-labelledby="askConfirmationDelete"
+    aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Confirmación de borrado
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ¿Desea eliminar el registro seleccionado? Esta operación no puede
+          deshacerse
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+            Cancelar
+          </button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" (click)="deleteArtist()">
+            Eliminar
+          </button>
+        </div>
       </div>
     </div>
   </div>
