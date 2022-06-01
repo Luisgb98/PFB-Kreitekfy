@@ -2,7 +2,7 @@ export class Song {
   id: number | undefined;
   name: string;
   length: number;
-  release_date: string;
+  releaseDate: string;
   genreId: number | undefined;
   genreName: string;
   artistId: number | undefined;
@@ -20,7 +20,7 @@ export class Song {
     id: number | undefined,
     name: string,
     length: number,
-    release_date: string,
+    releaseDate: string,
     genreId: number | undefined,
     genreName: string,
     artistId: number | undefined,
@@ -36,7 +36,7 @@ export class Song {
     this.id = id
     this.name = name
     this.length = length
-    this.release_date = release_date
+    this.releaseDate = releaseDate
     this.genreId = genreId
     this.genreName = genreName
     this.artistId = artistId
