@@ -12,7 +12,7 @@ import { SongService } from '../service/song.service';
 @Component({
   selector: 'app-song-form',
   templateUrl: './song-form.component.html',
-  styleUrls: ['./song-form.component.scss']
+  styleUrls: ['./song-form.component.scss'],
 })
 export class SongFormComponent implements OnInit {
   mode: 'NEW' | 'UPDATE' = 'NEW';
@@ -32,7 +32,7 @@ export class SongFormComponent implements OnInit {
     private genreService: GenreService,
     private artistService: ArtistService,
     private albumService: AlbumService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const entryParam: string =
@@ -219,7 +219,6 @@ export class SongFormComponent implements OnInit {
           songRequest.albumId!,
           songRequest.albumName!
         );
-        //TODO
       },
       error: (err) => {
         this.handleError(err);
@@ -228,10 +227,22 @@ export class SongFormComponent implements OnInit {
   }
 
   private initializeSong(): void {
-    this.song = new Song(undefined, '', 0, '', undefined, '', undefined, '', undefined, '', '');
+    this.song = new Song(
+      undefined,
+      '',
+      0,
+      '',
+      undefined,
+      '',
+      undefined,
+      '',
+      undefined,
+      '',
+      ''
+    );
   }
 
-  private handleError(err: any): void {
-    // ToDo
+  private handleError(error: any): void {
+    console.log(error);
   }
 }

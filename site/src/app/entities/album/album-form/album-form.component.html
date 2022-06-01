@@ -1,82 +1,89 @@
 <div class="bg-dark m-0">
+  <form
+    *ngIf="album"
+    #albumForm="ngForm"
+    name="albumForm"
+    role="form"
+    novalidate
+    autocomplete="off"
+  >
+    <!-- albumId -->
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input
+        disabled
+        type="number"
+        [(ngModel)]="album.id"
+        name="id"
+        class="form-control"
+        id="price"
+        #price="ngModel"
+      />
+    </div>
 
-<form
-  *ngIf="album"
-  #albumForm="ngForm"
-  name="albumForm"
-  role="form"
-  novalidate
-  autocomplete="off"
->
-  <!-- Id: solo visible si estamos en edición (pero no será editable) -->
-  <div class="form-group">
-    <label for="id">Id</label>
-    <input
-      disabled
-      type="number"
-      [(ngModel)]="album.id"
-      name="id"
-      class="form-control"
-      id="price"
-      #price="ngModel"
-    />
-  </div>
+    <!-- albumName -->
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input
+        type="text"
+        [(ngModel)]="album.name"
+        name="name"
+        class="form-control"
+        id="name"
+        #name="ngModel"
+        required
+        minlength="3"
+        maxlength="100"
+      />
+    </div>
+    <div *ngIf="name.dirty && name.errors">
+      <small class="form-text text-danger" *ngIf="name.errors['required']">
+        Este campo es requerido
+      </small>
+      <small class="form-text text-danger" *ngIf="name.errors['minlength']">
+        Este campo tiene que tener una longitud mínima de 3 caracteres
+      </small>
+    </div>
 
-  <!-- Name -->
-  <div class="form-group">
-    <label for="name">Nombre</label>
-    <input
-      type="text"
-      [(ngModel)]="album.name"
-      name="name"
-      class="form-control"
-      id="name"
-      #name="ngModel"
-      required
-      minlength="3"
-      maxlength="100"
-    />
-  </div>
-  <div *ngIf="name.dirty && name.errors">
-    <small class="form-text text-danger" *ngIf="name.errors['required']">
-      Este campo es requerido
-    </small>
-    <small class="form-text text-danger" *ngIf="name.errors['minlength']">
-      Este campo tiene que tener una longitud mínima de 3 caracteres
-    </small>
-  </div>
+    <!-- releaseDate -->
+    <div class="form-group">
+      <label for="release_date">Fecha de salida</label>
+      <input
+        type="text"
+        [(ngModel)]="album.release_date"
+        name="release_date"
+        class="form-control"
+        id="release_date"
+        #description="ngModel"
+        maxlength="2000"
+      />
+    </div>
 
-  <!-- Fecha de salida -->
-  <div class="form-group">
-    <label for="release_date">Fecha de salida</label>
-    <input
-      type="text"
-      [(ngModel)]="album.release_date"
-      name="release_date"
-      class="form-control"
-      id="release_date"
-      #description="ngModel"
-      maxlength="2000"
-    />
-  </div>
+    <!-- albumImage -->
+    <div class="form-group">
+      <label for="image">Imagen</label>
+      <input
+        type="file"
+        id="image"
+        class="form-control"
+        id="image"
+        (change)="includeImageInAlbum($event)"
+      />
+      <img
+        *ngIf="album.image"
+        [src]="'data:image/webp;base64,' + album.image"
+      />
+    </div>
 
-  <!-- Imagen -->
-  <div class="form-group">
-    <label for="image">Imagen</label>
-    <input
-      type="file"
-      id="image"
-      class="form-control"
-      id="image"
-      (change)="includeImageInAlbum($event)"
-    />
-    <img *ngIf="album.image" [src]="'data:image/webp;base64,' + album.image" />
-  </div>
-
-  <div class="col-12">
-    <button class="btn btn-secondary botoneraCreate" (click)="saveAlbum()" [routerLink]="['/album']" [disabled]="albumForm.invalid">Guardar</button>
-  </div>
-  
-
-</form>
+    <div class="col-12">
+      <button
+        class="btn btn-secondary botoneraCreate"
+        (click)="saveAlbum()"
+        [routerLink]="['/album']"
+        [disabled]="albumForm.invalid"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
 </div>

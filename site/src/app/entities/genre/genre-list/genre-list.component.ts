@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Genre } from '../model/genre.model';
 import { GenreService } from '../service/genre.service';
 
 @Component({
   selector: 'app-genre-list',
   templateUrl: './genre-list.component.html',
-  styleUrls: ['./genre-list.component.scss']
+  styleUrls: ['./genre-list.component.scss'],
 })
 export class GenreListComponent implements OnInit {
   genres: Genre[] = [];
 
   genreIdToDelete?: number;
 
-  constructor(
-    private route: ActivatedRoute,
-    private genreService: GenreService
-    ) { }
+  constructor(private genreService: GenreService) {}
 
   ngOnInit(): void {
     this.getAllGenres();
@@ -32,16 +28,22 @@ export class GenreListComponent implements OnInit {
         next: (data) => {
           this.getAllGenres();
         },
-        error: (err) => {this.handleError(err)}
-      })
+        error: (err) => {
+          this.handleError(err);
+        },
+      });
     }
   }
 
   private getAllGenres(): void {
     this.genreService.getAllGenres().subscribe({
-      next: (genresRequest) => { this.genres = genresRequest; },
-      error: (err) => { this.handleError(err); }
-    })
+      next: (genresRequest) => {
+        this.genres = genresRequest;
+      },
+      error: (err) => {
+        this.handleError(err);
+      },
+    });
   }
 
   private handleError(error: any): void {

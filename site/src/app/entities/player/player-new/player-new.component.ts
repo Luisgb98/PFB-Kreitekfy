@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Song } from '../../song/model/song.model';
 import { PlayerService } from '../service/player.service';
 
@@ -11,11 +10,8 @@ import { PlayerService } from '../service/player.service';
 export class PlayerNewComponent implements OnInit {
   songs: Song[] = [];
   size: number = 5;
-  sort: string = "releaseDate,desc";
-  constructor(
-    private route: ActivatedRoute,
-    private playerService: PlayerService
-  ) {}
+  sort: string = 'releaseDate,desc';
+  constructor(private playerService: PlayerService) {}
 
   ngOnInit(): void {
     this.getAllSongs();

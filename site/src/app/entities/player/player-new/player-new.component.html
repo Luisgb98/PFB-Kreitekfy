@@ -1,16 +1,20 @@
 <div class="bg-dark">
+  <h3 class="text-white">NOVEDADES</h3>
 
-<h3 class="text-white">NOVEDADES</h3>
-
-<div class="container d-flex flex-row">
-<div class="card m-2" style="width: 18rem;" *ngFor="let song of songs">
-    <img class="card-img-top" [src]="'data:image/webp;base64,' + song.albumImage" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{ song.name }}</h5>
-      <p class="card-text">{{ song.albumName }}</p>
-      <a [routerLink]="['/song', song.id]" class="btn btn-success"><i class="fa fa-play"></i> Reproducir</a>
+  <div class="container d-flex flex-row">
+    <div class="card m-2" style="width: 18rem" *ngFor="let song of songs">
+      <img
+        class="card-img-top"
+        [src]="'data:image/webp;base64,' + song.albumImage"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ song.name }}</h5>
+        <p class="card-text">{{ song.albumName }}</p>
+        <a [routerLink]="['/song', song.id]" class="btn btn-success"
+          ><i class="fa fa-play"></i> Reproducir</a
+        >
+      </div>
     </div>
   </div>
-</div>
-
 </div>

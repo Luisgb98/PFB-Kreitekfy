@@ -1,22 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Artist } from '../model/artist.model';
 import { ArtistService } from '../service/artist.service';
 
 @Component({
   selector: 'app-artist-list',
   templateUrl: './artist-list.component.html',
-  styleUrls: ['./artist-list.component.scss']
+  styleUrls: ['./artist-list.component.scss'],
 })
 export class ArtistListComponent implements OnInit {
   artists: Artist[] = [];
 
   artistIdToDelete?: number;
 
-  constructor(
-    private route: ActivatedRoute,
-    private artistService: ArtistService
-  ) { }
+  constructor(private artistService: ArtistService) {}
 
   ngOnInit(): void {
     this.getAllArtists();
@@ -32,15 +28,21 @@ export class ArtistListComponent implements OnInit {
         next: (data) => {
           this.getAllArtists();
         },
-        error: (err) => {this.handleError(err)}
-      })
+        error: (err) => {
+          this.handleError(err);
+        },
+      });
     }
   }
 
   private getAllArtists(): void {
     this.artistService.getAllArtists().subscribe({
-      next: (artistRequest) => { this.artists = artistRequest; },
-      error: (err) => { this.handleError(err); },
+      next: (artistRequest) => {
+        this.artists = artistRequest;
+      },
+      error: (err) => {
+        this.handleError(err);
+      },
     });
   }
 

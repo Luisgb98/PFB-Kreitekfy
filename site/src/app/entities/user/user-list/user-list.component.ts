@@ -5,15 +5,13 @@ import { UserService } from '../service/user.service';
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
-  styleUrls: ['./user-list.component.scss']
+  styleUrls: ['./user-list.component.scss'],
 })
 export class UserListComponent implements OnInit {
   users: User[] = [];
   userSelected?: string;
 
-  constructor(
-    private userService: UserService,
-  ) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.getAllUsers();
@@ -23,25 +21,28 @@ export class UserListComponent implements OnInit {
     this.userSelected = userRol;
 
     if (userRol === 'admin') {
-      console.log("HOLA ADMIN")
+      console.log('HOLA ADMIN');
       this.userService.show();
     }
 
     if (userRol === 'user') {
-      console.log("HOLA USUARIO")
+      console.log('HOLA USUARIO');
       this.userService.hide();
     }
   }
 
   private getAllUsers(): void {
     this.userService.getAllUsers().subscribe({
-      next: (usersRequest) => {this.users = usersRequest; },
-      error: (err) => {this.handleError(err);}
-    })
+      next: (usersRequest) => {
+        this.users = usersRequest;
+      },
+      error: (err) => {
+        this.handleError(err);
+      },
+    });
   }
 
   private handleError(error: any): void {
     console.log(error);
   }
-
 }

@@ -6,7 +6,7 @@ import { SongService } from '../service/song.service';
 @Component({
   selector: 'app-song-card',
   templateUrl: './song-card.component.html',
-  styleUrls: ['./song-card.component.scss']
+  styleUrls: ['./song-card.component.scss'],
 })
 export class SongCardComponent implements OnInit {
   songId?: number;
@@ -15,7 +15,7 @@ export class SongCardComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private songService: SongService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.songId = +this.route.snapshot.paramMap.get('songId')!;
@@ -26,7 +26,6 @@ export class SongCardComponent implements OnInit {
     this.songService.getSongById(songId).subscribe({
       next: (songRequest) => {
         this.song = songRequest;
-        //TODO
       },
       error: (err) => {
         this.handleError(err);
@@ -34,8 +33,7 @@ export class SongCardComponent implements OnInit {
     });
   }
 
-  private handleError(err: any): void {
-    // ToDo
+  private handleError(error: any): void {
+    console.log(error);
   }
-
 }

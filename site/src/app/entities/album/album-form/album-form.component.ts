@@ -6,7 +6,7 @@ import { AlbumService } from '../service/album.service';
 @Component({
   selector: 'app-album-form',
   templateUrl: './album-form.component.html',
-  styleUrls: ['./album-form.component.scss']
+  styleUrls: ['./album-form.component.scss'],
 })
 export class AlbumFormComponent implements OnInit {
   mode: 'NEW' | 'UPDATE' = 'NEW';
@@ -16,19 +16,19 @@ export class AlbumFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private albumService: AlbumService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const entryParam: string =
-    this.route.snapshot.paramMap.get('albumId') ?? 'new';
-  if (entryParam !== 'new') {
-    this.albumId = +this.route.snapshot.paramMap.get('albumId')!;
-    this.mode = 'UPDATE';
-    this.getAlbumById(this.albumId!);
-  } else {
-    this.mode = 'NEW';
-    this.initializeAlbum();
-  }
+      this.route.snapshot.paramMap.get('albumId') ?? 'new';
+    if (entryParam !== 'new') {
+      this.albumId = +this.route.snapshot.paramMap.get('albumId')!;
+      this.mode = 'UPDATE';
+      this.getAlbumById(this.albumId!);
+    } else {
+      this.mode = 'NEW';
+      this.initializeAlbum();
+    }
   }
 
   public saveAlbum(): void {
@@ -127,8 +127,7 @@ export class AlbumFormComponent implements OnInit {
     this.album = new Album(undefined, '', '', '');
   }
 
-  private handleError(err: any): void {
-    // ToDo
+  private handleError(error: any): void {
+    console.log(error);
   }
-
-  }
+}

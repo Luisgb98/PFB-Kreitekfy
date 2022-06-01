@@ -6,7 +6,7 @@ import { GenreService } from '../service/genre.service';
 @Component({
   selector: 'app-genre-form',
   templateUrl: './genre-form.component.html',
-  styleUrls: ['./genre-form.component.scss']
+  styleUrls: ['./genre-form.component.scss'],
 })
 export class GenreFormComponent implements OnInit {
   mode: 'NEW' | 'UPDATE' = 'NEW';
@@ -16,7 +16,7 @@ export class GenreFormComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private genreService: GenreService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     const entryParam: string =
@@ -80,8 +80,7 @@ export class GenreFormComponent implements OnInit {
     this.genre = new Genre(undefined, '');
   }
 
-  private handleError(err: any): void {
-    // ToDo
+  private handleError(error: any): void {
+    console.log(error);
   }
-
 }

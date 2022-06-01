@@ -1,16 +1,40 @@
 <div class="bg-dark m-0">
-  <form *ngIf="genre" #genreForm="ngForm" name="genreForm" role="form" novalidate autocomplete="off">
-    <!-- Id: solo visible si estamos en edición (pero no será editable) -->
+  <form
+    *ngIf="genre"
+    #genreForm="ngForm"
+    name="genreForm"
+    role="form"
+    novalidate
+    autocomplete="off"
+  >
+    <!-- genreId -->
     <div class="form-group">
       <label for="id">Id</label>
-      <input disabled type="number" [(ngModel)]="genre.id" name="id" class="form-control" id="price" #price="ngModel" />
+      <input
+        disabled
+        type="number"
+        [(ngModel)]="genre.id"
+        name="id"
+        class="form-control"
+        id="price"
+        #price="ngModel"
+      />
     </div>
 
-    <!-- Nombre -->
+    <!-- genreName -->
     <div class="form-group">
       <label for="name">Nombre</label>
-      <input type="text" [(ngModel)]="genre.name" name="name" class="form-control" id="name" #name="ngModel" required
-        minlength="3" maxlength="100" />
+      <input
+        type="text"
+        [(ngModel)]="genre.name"
+        name="name"
+        class="form-control"
+        id="name"
+        #name="ngModel"
+        required
+        minlength="3"
+        maxlength="100"
+      />
     </div>
 
     <div *ngIf="name.dirty && name.errors">
@@ -23,10 +47,14 @@
     </div>
 
     <div class="col-12">
-      <button class="btn btn-secondary botoneraCreate" (click)="saveGenre()" [routerLink]="['/genre']" [disabled]="genreForm.invalid">
+      <button
+        class="btn btn-secondary botoneraCreate"
+        (click)="saveGenre()"
+        [routerLink]="['/genre']"
+        [disabled]="genreForm.invalid"
+      >
         Guardar
       </button>
     </div>
-
   </form>
 </div>

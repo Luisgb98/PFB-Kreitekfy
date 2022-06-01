@@ -19,7 +19,6 @@ import { AlbumListComponent } from './entities/album/album-list/album-list.compo
 import { AlbumFormComponent } from './entities/album/album-form/album-form.component';
 
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import { LoginComponent } from './login/login.component';
 import { PlayerNewComponent } from './entities/player/player-new/player-new.component';
 import { PlayerViewsComponent } from './entities/player/player-views/player-views.component';
 import { PlayerRatedComponent } from './entities/player/player-rated/player-rated.component';
@@ -41,7 +40,6 @@ import { UserListComponent } from './entities/user/user-list/user-list.component
     SongFormComponent,
     AlbumListComponent,
     AlbumFormComponent,
-    LoginComponent,
     PlayerNewComponent,
     PlayerViewsComponent,
     PlayerRatedComponent,
