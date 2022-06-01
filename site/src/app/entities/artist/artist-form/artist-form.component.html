@@ -74,6 +74,6 @@
   </div>
 
   <div class="buttonsForm">
-    <button (click)="saveArtist()" [disabled]="artistForm.invalid">Guardar</button>
+    <button (click)="saveArtist()" [routerLink]="['/artist']" [disabled]="artistForm.invalid">Guardar</button>
   </div>
 </form>

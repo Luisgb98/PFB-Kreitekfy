@@ -178,6 +178,6 @@
   </div>
 
   <div class="buttonsForm">
-    <button (click)="saveSong()" [disabled]="songForm.invalid">Guardar</button>
+    <button (click)="saveSong()" [routerLink]="['/song']" [disabled]="songForm.invalid">Guardar</button>
   </div>
 </form>
