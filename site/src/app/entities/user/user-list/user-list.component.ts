@@ -20,12 +20,12 @@ export class UserListComponent implements OnInit {
   public saveUser(userRol: string): void {
     this.userSelected = userRol;
 
-    if (userRol === 'admin') {
+    if (userRol === 'Admin') {
       console.log('HOLA ADMIN');
       this.userService.show();
     }
 
-    if (userRol === 'user') {
+    if (userRol === 'User') {
       console.log('HOLA USUARIO');
       this.userService.hide();
     }
