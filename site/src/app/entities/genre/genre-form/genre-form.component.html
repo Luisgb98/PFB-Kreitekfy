@@ -1,0 +1,60 @@
+<div class="bg-dark m-0">
+  <form
+    *ngIf="genre"
+    #genreForm="ngForm"
+    name="genreForm"
+    role="form"
+    novalidate
+    autocomplete="off"
+  >
+    <!-- genreId -->
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input
+        disabled
+        type="number"
+        [(ngModel)]="genre.id"
+        name="id"
+        class="form-control"
+        id="price"
+        #price="ngModel"
+      />
+    </div>
+
+    <!-- genreName -->
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input
+        type="text"
+        [(ngModel)]="genre.name"
+        name="name"
+        class="form-control"
+        id="name"
+        #name="ngModel"
+        required
+        minlength="3"
+        maxlength="100"
+      />
+    </div>
+
+    <div *ngIf="name.dirty && name.errors">
+      <small class="form-text text-danger" *ngIf="name.errors['required']">
+        Este campo es requerido
+      </small>
+      <small class="form-text text-danger" *ngIf="name.errors['minlength']">
+        Este campo tiene que tener una longitud mínima de 3 caracteres
+      </small>
+    </div>
+
+    <div class="col-12">
+      <button
+        class="btn btn-secondary botoneraCreate"
+        (click)="saveGenre()"
+        [routerLink]="['/genre']"
+        [disabled]="genreForm.invalid"
+      >
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>

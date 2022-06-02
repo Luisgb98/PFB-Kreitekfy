@@ -1,0 +1,136 @@
+img {
+  width: 200px;
+  border-radius: 5%;
+}
+
+table {
+  width: 65%;
+  border: 10px solid gray;
+  border-radius: 10px;
+  margin: 0 auto;
+
+  header {
+    padding: 15px;
+
+    header h1 {
+      font-size: 20pt;
+      color: black;
+    }
+  }
+
+  th,
+  td {
+    padding: 5px;
+    color: #f2f2f2;
+    text-align: center;
+    font-size: 15px;
+  }
+
+  th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  tr {
+    height: 40px;
+
+    td button {
+      margin-right: 70px;
+      margin-bottom: 15px;
+      border-color: #f2f2f2;
+      border-radius: 5px;
+      width: 90%;
+      background-color: transparent;
+      color: #f2f2f2;
+    }
+
+    td button:hover {
+      background-color: rgb(141, 88, 134);
+    }
+  }
+  tr:nth-child(even) {
+    background-color: #1a1e21;
+  }
+}
+
+.botoneraHeader {
+  width: 85%;
+  margin: 0 auto;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.botoneraFooter {
+  width: 85%;
+  margin: 0 auto;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.botoneraHeader button,
+.botoneraFooter button {
+  border-radius: 10px;
+}
+
+.botoneraPaginacion {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.botoneraCreate {
+  width: 100%;
+  text-align: start;
+  margin-top: 20px;
+  padding-left: 24%;
+}
+
+.botoneraPaginacion button,
+.botoneraPaginacion span {
+  margin-left: 50px;
+  color: #f2f2f2;
+}
+
+.containerFiltros {
+  margin-top: 25px;
+  width: 50%;
+  margin: 0 auto;
+  background-color: rgb(117, 73, 111);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  margin-top: 25px;
+
+  form {
+    padding-top: 30px;
+
+    label {
+      display: block;
+      color: #f2f2f2;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 87%;
+      border-radius: 5px;
+    }
+  }
+
+  #filterTitle {
+    font-size: 14pt;
+    background: rgb(141, 88, 134);
+    color: white;
+    width: 200px;
+    padding-left: 20px;
+    border-radius: 8px;
+    margin-top: -33px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  #btnSearch {
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,170 @@
+<div class="bg-dark">
+  <div class="text-dark ps-5">.</div>
+
+  <div class="containerFiltros">
+    <div id="filterTitle">Filtros</div>
+
+    <form>
+      <div class="row">
+        <!-- Name -->
+        <div class="form-group" class="col-12 col-md-6">
+          <label for="name">Nombre</label>
+          <input type="text" [(ngModel)]="nameFilter" name="name" />
+        </div>
+
+        <!-- Genre -->
+        <div class="form-group" class="col-12 col-md-6">
+          <label for="genre">Estilo</label>
+          <input type="text" [(ngModel)]="genreFilter" name="genre" />
+        </div>
+
+        <!-- Artist -->
+        <div class="form-group" class="col-12 col-md-6">
+          <label for="artist">Artista</label>
+          <input type="text" [(ngModel)]="artistFilter" name="artist" />
+        </div>
+
+        <!-- Album -->
+        <div class="form-group" class="col-12 col-md-6">
+          <label for="album">Album</label>
+          <input type="text" [(ngModel)]="albumFilter" name="name" />
+        </div>
+
+        <div class="col-12 col-md-3">
+          <button
+            id="btnSearch"
+            class="btn btn-secondary"
+            (click)="searchByFilters()"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="botoneraCreate">
+    <button [routerLink]="['/song/edit', 'new']" class="btn btn-secondary m-4">
+      Nueva canción
+    </button>
+  </div>
+
+  <table class="mt-2" *ngIf="songs.length > 0">
+    <thead>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Duración</th>
+      <th>Fecha de salida</th>
+      <th>Género</th>
+      <th>Artista</th>
+      <th>Álbum</th>
+      <th>Imagen</th>
+      <th>Valoración</th>
+      <th>Reproducciones</th>
+      <th>Acciones</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let song of songs">
+        <td>{{ song.id }}</td>
+        <td>{{ song.name }}</td>
+        <td>{{ song.length }}</td>
+        <td>{{ song.releaseDate }}</td>
+        <td>{{ song.genreName }}</td>
+        <td>{{ song.artistName }}</td>
+        <td>{{ song.albumName }}</td>
+        <td>
+          <img
+            class="imgSong"
+            [src]="'data:image/webp;base64,' + song.albumImage"
+          />
+        </td>
+        <td>{{ song.ratingValue }}</td>
+        <td>{{ song.viewsValue }}</td>
+        <td>
+          <button id="btnPlaySong" [routerLink]="['/song', song.id]">
+            Reproducir
+          </button>
+          <br />
+          <button id="btnEditSong" [routerLink]="['/song/edit', song.id]">
+            Editar
+          </button>
+          <button
+            id="btnDeleteSong"
+            data-bs-toggle="modal"
+            data-bs-target="#askConfirmationDelete"
+            (click)="prepareSongToDelete(song.id!)"
+          >
+            Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="botoneraPaginacion">
+    <button
+      [disabled]="first"
+      class="btn btn-secondary btnAtras"
+      (click)="previousPage()"
+    >
+      Anterior
+    </button>
+    <span
+      >Pagina {{ page + 1 }} de {{ totalPages }} - Número de canciones:
+      {{ totalElements }}</span
+    >
+    <button
+      [disabled]="last"
+      class="btn btn-secondary btnSiguiente"
+      (click)="nextPage()"
+    >
+      Siguiente
+    </button>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="askConfirmationDelete"
+    tabindex="-1"
+    aria-labelledby="askConfirmationDelete"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">
+            Confirmación de borrado
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          ¿Desea eliminar el registro seleccionado? Esta operación no puede
+          deshacerse
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Cancelar
+          </button>
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-bs-dismiss="modal"
+            (click)="deleteSong()"
+          >
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

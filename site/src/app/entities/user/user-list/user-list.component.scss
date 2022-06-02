@@ -1,0 +1,22 @@
+.modal-body {
+  & img {
+    width: 200px;
+    border-radius: 50%;
+  }
+  margin: 20px;
+}
+
+.prueba {
+  margin: 20px;
+}
+
+.modal-content {
+  width: auto;
+  margin-left: -60%;
+  margin-bottom: 75%;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: row;
+}

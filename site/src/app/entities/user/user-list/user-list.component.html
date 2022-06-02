@@ -1,0 +1,42 @@
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modalUserNew"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Usuarios</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="prueba" *ngFor="let user of users">
+          <img
+            class="card-img-top"
+            [src]="'data:image/webp;base64,' + user.avatar"
+            alt="Card image cap"
+          />
+          <div class="card-body">
+            <h5 class="card-title">{{ user.name }}</h5>
+            <p class="card-text">{{ user.rol }}</p>
+            <a
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+              (click)="saveUser(user.rol)"
+              >Iniciar sesión</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
